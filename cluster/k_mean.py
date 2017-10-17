@@ -51,8 +51,11 @@ print(point)
 
 #聚类数
 k = 3
-#中心
-rep = [(random.uniform(minx,maxx),random.uniform(miny,maxy)) for i in range(k)]
+
+#初始中心
+p = [x for x in range(n)]
+random.shuffle(p)
+rep = [point[p[x]] for x in range(k)]
 
 #点归属
 belong = []
